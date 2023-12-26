@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "author": "jitong` <1023466819@qq.com>",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "@ant-design/pro-layout": "^7.17.13",
+    "antd": "^5.11.1",
+    "axios": "^1.6.1",
+    "umi": "^4.0.88"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@umijs/plugins": "^4.0.88",
+    "typescript": "^5.2.2"
+  }
+}
