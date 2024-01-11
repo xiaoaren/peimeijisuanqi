@@ -49,9 +49,12 @@ export default function HomePage() {
                     <tr>
                         <td>种类</td>
                         {
-                            columnList.map(column => {
+                            columnList.map((column, index) => {
                                 return (
-                                    <td>{column}</td>
+                                    <td onClick={() => {
+                                        columnList[0];
+                                        setColumnList();
+                                    }}>{column}</td>
                                 )
                             })
                         }
