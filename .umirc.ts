@@ -1,8 +1,8 @@
 import { defineConfig } from "umi";
-const {PUBLIC_PATH =''} = process.env
+const {PUBLIC_PATH ='peimeijisuanqi'} = process.env
 export default defineConfig({
   // base: PUBLIC_PATH,
-  // publicPath: PUBLIC_PATH + '/',
+  publicPath: PUBLIC_PATH + '/',
   routes: [
     { path: "/", component: "index" },
     { path: "/docs", component: "docs" },
