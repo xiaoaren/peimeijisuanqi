@@ -79,50 +79,49 @@ export default function HomePage() {
             {contextHolder}
             <div ref={scRef} className={comStyle.editTableBox}>
                 <table className={comStyle.editTable} style={{width: (columnList.length * 20) + 'vw'}} border="1">
-                    <tbody>
-                    <tr>
-                        <td>种类</td>
+                        <tr>
+                            <td>种类</td>
+                            {
+                                columnList.map((column, index) => {
+                                    return (
+                                        <td key={'column_' + index} style={{textAlign: 'center'}} onClick={() => {
+                                            // columnList[0];
+                                            // setColumnList();
+                                        }}>{column}</td>
+                                    )
+                                })
+                            }
+                            <td style={{textAlign: 'center'}} >
+                                <Button type="primary" icon={<PlusOutlined/>} onClick={() => {
+                                    setIsModalOpen(true);
+                                }}>添加</Button>
+                            </td>
+                        </tr>
                         {
-                            columnList.map((column, index) => {
+                            lieList.map((lie, lieIndex) => {
                                 return (
-                                    <td key={'column_' + index} style={{textAlign: 'center'}} onClick={() => {
-                                        // columnList[0];
-                                        // setColumnList();
-                                    }}>{column}</td>
+                                    <tr key={'lie_' + lieIndex}>
+                                        <td>{lie}</td>
+                                        {
+                                            columnList.map((column, columnIndex) => {
+                                                return <td key={'lie_' + columnIndex + '_' + lieIndex}><Input
+                                                    bordered={false} onChange={(e) => {
+                                                    if (valMap['' + lie]) {
+                                                        valMap['' + lie]['' + columnIndex] = e.currentTarget.value;
+                                                    } else {
+                                                        valMap['' + lie] = {};
+                                                        valMap['' + lie]['' + columnIndex] = e.currentTarget.value;
+                                                    }
+                                                    console.log(valMap);
+                                                    comHandle();
+                                                }} /></td>
+                                            })
+                                        }
+                                        <td></td>
+                                    </tr>
                                 )
                             })
                         }
-                        <td style={{textAlign: 'center'}}>
-                            <Button type="primary" icon={<PlusOutlined />} onClick={() => {
-                                setIsModalOpen(true);
-                            }}>添加</Button>
-                        </td>
-                    </tr>
-                    {
-                        lieList.map((lie, lieIndex) => {
-                            return (
-                                <tr key={'lie_' + lieIndex}>
-                                    <td>{lie}</td>
-                                    {
-                                        columnList.map((column, columnIndex) => {
-                                            return <td key={'lie_' + columnIndex + '_' + lieIndex} ><Input bordered={false} onChange={(e) => {
-                                                if(valMap['' + lie]) {
-                                                    valMap['' + lie]['' + columnIndex] = e.currentTarget.value;
-                                                }else {
-                                                    valMap['' + lie] = {};
-                                                    valMap['' + lie]['' + columnIndex] = e.currentTarget.value;
-                                                }
-                                                console.log(valMap);
-                                                comHandle();
-                                            }} /></td>
-                                        })
-                                    }
-                                    <td></td>
-                                </tr>
-                            )
-                        })
-                    }
-                    </tbody>
                 </table>
             </div>
             <table className={comStyle.totalTable}>
