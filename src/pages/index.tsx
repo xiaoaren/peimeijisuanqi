@@ -78,7 +78,7 @@ export default function HomePage() {
         <div>
             {contextHolder}
             <div ref={scRef} className={comStyle.editTableBox}>
-                <table className={comStyle.editTable} style={{width: (columnList.length * 20) + 'vw'}} border="1">
+                <table className={comStyle.editTable} style={{width: ((columnList.length + 2) * 20 + 5) + 'vw'}} border="1">
                         <tr>
                             <td>种类</td>
                             {
