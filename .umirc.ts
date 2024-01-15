@@ -1,5 +1,5 @@
 import { defineConfig } from "umi";
-const {PUBLIC_PATH ='peimeijisuanqi'} = process.env
+const {PUBLIC_PATH =''} = process.env
 export default defineConfig({
   // base: PUBLIC_PATH,
   publicPath: PUBLIC_PATH + '/',
