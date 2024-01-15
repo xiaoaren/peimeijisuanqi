@@ -3,6 +3,7 @@ const {PUBLIC_PATH ='peimeijisuanqi'} = process.env
 export default defineConfig({
   // base: PUBLIC_PATH,
   publicPath: PUBLIC_PATH + '/',
+  outputPath: 'docs', //默认dist
   routes: [
     { path: "/", component: "index" },
     { path: "/docs", component: "docs" },
